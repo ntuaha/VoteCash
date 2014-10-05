@@ -99,7 +99,7 @@ class TF:
 			swift_index = swift_index+1
 			line  = line.decode("utf-8").replace(u"\"","")
 
-			if re.match(u".*99 年直轄市市長選舉擬參選人",line,re.U) is not None:
+			if re.match(u".*選舉擬參選人",line,re.U) is not None:
 				if record is not None:
 					self.data.append(record)
 				record = Record()
