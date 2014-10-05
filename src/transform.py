@@ -147,7 +147,7 @@ class TF:
 				self.debug_print(swift_index,line,record.r05)
 				continue
 
-			r06s = re.match(u"其他收入\D+([\d,]+)\D+超過三萬元之收入合計〆([\d,]+)\D+",line,re.U)
+			r06s = re.match(u"其他收入\D+([\d,]+)\D+超過三萬元之收入合計\D*([\d,]+)\D+",line,re.U)
 			if r06s is not None:				
 				record.r06 = float(r06s.group(1).replace(",",""))
 				record.r062 = float(r06s.group(2).replace(",",""))
@@ -223,7 +223,7 @@ class TF:
 				self.debug_print(swift_index,line,record.p08)
 				continue
 
-			p09s = re.match(u".*繳庫支出\D+([\d,]+)\D+專戶存款結存金額〆([\d,]+)\D+",line,re.U)
+			p09s = re.match(u".*繳庫支出\D+([\d,]+)\D+專戶存款結存金額\D*([\d,]+)\D+",line,re.U)
 			if p09s is not None:
 				record.p09 = float(p09s.group(1).replace(",",""))
 				record.p092 = float(p09s.group(2).replace(",",""))
@@ -237,7 +237,7 @@ class TF:
 				self.debug_print(swift_index,line,record.p10)
 				continue
 
-			p11s = re.match(u".*支出合計\D+([\d,]+)\D+超過三萬元之支出合計〆([\d,]+)\D+",line,re.U)
+			p11s = re.match(u".*支出合計\D+([\d,]+)\D+超過三萬元之支出合計\D*([\d,]+)\D+",line,re.U)
 			if p11s is not None:
 				record.p11 = float(p11s.group(1).replace(",",""))
 				record.p112 = float(p11s.group(2).replace(",",""))
