@@ -56,11 +56,10 @@ t2 絀 金錢以外之賸餘財產 0
 	p07 = None
 	p08 = None
 	p09 = None
+	p092 = None
 	p10 = None
-	p102 = None
 	p11 = None
-	p12 = None
-	p122 = None
+	p112 = None
 	t1 = None
 	t2 = None
 	d1 = None
@@ -78,7 +77,7 @@ t2 絀 金錢以外之賸餘財產 0
 		return s
 
 	def output(self):
-		return ",".join(map(str,[self.area,self.name,self.title,self.r01,self.r02,self.r03,self.r04,self.r05,self.r06,self.r062,self.r07,self.r08,self.r09,self.p01,self.p02,self.p03,self.p04,self.p05,self.p06,self.p07,self.p08,self.p09,self.p10,self.p102,self.p11,self.p12,self.p122,self.t1,self.t2,self.d1,self.d2,self.d3]))
+		return ",".join(map(str,[self.area,self.name,self.title,self.r01,self.r02,self.r03,self.r04,self.r05,self.r06,self.r062,self.r07,self.r08,self.r09,self.p01,self.p02,self.p03,self.p04,self.p05,self.p06,self.p07,self.p08,self.p09,self.p092,self.p10,self.p11,self.p112,self.t1,self.t2,self.d1,self.d2,self.d3]))
 
 
 class TF:
@@ -181,73 +180,69 @@ class TF:
 				self.debug_print(swift_index,line,record.p01)
 				continue
 
-			p02s = re.match(u"人事費用支出\D+([\d,]+)\D+",line,re.U)
+		
+
+			p02s = re.match(u".+宣傳支出\D+([\d,]+)\D+",line,re.U)
 			if p02s is not None:
 				record.p02 = float(p02s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p02)
 				continue
 
-			p03s = re.match(u".+宣傳支出\D+([\d,]+)\D+",line,re.U)
+			p03s = re.match(u"租用宣傳車輛支出\D+([\d,]+)\D+",line,re.U)
 			if p03s is not None:
 				record.p03 = float(p03s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p03)
 				continue
 
-			p04s = re.match(u"租用宣傳車輛支出\D+([\d,]+)\D+",line,re.U)
+			p04s = re.match(u"租用競選辦事處支出\D+([\d,]+)\D+",line,re.U)
 			if p04s is not None:
 				record.p04 = float(p04s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p04)
 				continue
-
-			p05s = re.match(u"租用競選辦事處支出\D+([\d,]+)\D+",line,re.U)
+			p05s = re.match(u".+集會支出\D+([\d,]+)\D+",line,re.U)
 			if p05s is not None:
 				record.p05 = float(p05s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p05)
 				continue
-			p06s = re.match(u".+集會支出\D+([\d,]+)\D+",line,re.U)
+
+			p06s = re.match(u".+交通旅運支出\D+([\d,]+)\D+",line,re.U)
 			if p06s is not None:
 				record.p06 = float(p06s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p06)
 				continue
 
-			p07s = re.match(u".+交通旅運支出\D+([\d,]+)\D+",line,re.U)
+			p07s = re.match(u".+雜支支出\D+([\d,]+)\D+",line,re.U)
 			if p07s is not None:
 				record.p07 = float(p07s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p07)
 				continue
 
-			p08s = re.match(u".+雜支支出\D+([\d,]+)\D+",line,re.U)
+			p08s = re.match(u"返還捐贈支出\D+([\d,]+)\D+",line,re.U)
 			if p08s is not None:
 				record.p08 = float(p08s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.p08)
 				continue
 
-			p09s = re.match(u"返還捐贈支出\D+([\d,]+)\D+",line,re.U)
+			p09s = re.match(u".+繳庫支出\D+([\d,]+)\D+專戶存款結存金額〆([\d,]+)\D+",line,re.U)
 			if p09s is not None:
 				record.p09 = float(p09s.group(1).replace(",",""))
+				record.p092 = float(p09s.group(2).replace(",",""))
 				self.debug_print(swift_index,line,record.p09)
+				self.debug_print(swift_index,line,record.p092)
 				continue
 
-			p10s = re.match(u".+繳庫支出\D+([\d,]+)\D+專戶存款結存金額〆([\d,]+)\D+",line,re.U)
+			p10s = re.match(u"公共關係費用支出\D+([\d,]+)\D+",line,re.U)
 			if p10s is not None:
 				record.p10 = float(p10s.group(1).replace(",",""))
-				record.p102 = float(p10s.group(2).replace(",",""))
 				self.debug_print(swift_index,line,record.p10)
-				self.debug_print(swift_index,line,record.p102)
 				continue
 
-			p11s = re.match(u"公共關係費用支出\D+([\d,]+)\D+",line,re.U)
+			p11s = re.match(u".+支出合計\D+([\d,]+)\D+超過三萬元之支出合計〆([\d,]+)\D+",line,re.U)
 			if p11s is not None:
 				record.p11 = float(p11s.group(1).replace(",",""))
+				record.p112 = float(p11s.group(2).replace(",",""))
 				self.debug_print(swift_index,line,record.p11)
-				continue
-
-			p12s = re.match(u".+支出合計\D+([\d,]+)\D+超過三萬元之支出合計〆([\d,]+)\D+",line,re.U)
-			if p12s is not None:
-				record.p12 = float(p12s.group(1).replace(",",""))
-				record.p122 = float(p12s.group(2).replace(",",""))
-				self.debug_print(swift_index,line,record.p12)
-				self.debug_print(swift_index,line,record.p122)
+				self.debug_print(swift_index,line,record.p112)
 				continue
 
 			t1s = re.match(u".+收支結存金額 ([\d\-,]+)\D+",line,re.U)
