@@ -97,7 +97,7 @@ class TF:
 		self.data=[]
 		for line in inF.readlines():
 			swift_index = swift_index+1
-			line  = line.decode("utf-8")
+			line  = line.decode("utf-8").replace(u"\"","")
 
 			if re.match(u".+99 年直轄市市長選舉擬參選人",line,re.U) is not None or re.match(u"99 年直轄市市長選舉擬參選人",line,re.U) is not None:
 				if record is not None:
