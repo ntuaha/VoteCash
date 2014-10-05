@@ -100,7 +100,7 @@ class TF:
 			swift_index = swift_index+1
 			line  = line.decode("utf-8")
 
-			if re.match(u".+99 年直轄市市長選舉擬參選人",line,re.U) is not None:
+			if re.match(u".+99 年直轄市市長選舉擬參選人",line,re.U) is not None or re.match(u"99 年直轄市市長選舉擬參選人",line,re.U) is not None:
 				if record is not None:
 					self.data.append(record)
 				record = Record()
@@ -271,12 +271,30 @@ class TF:
 				self.debug_print(swift_index,line,record.d1)
 				continue
 
+			d2s = re.match(u"申報日期〆([\d]+)\D+([\d]+)\D+([\d]+)\D+",line,re.U)
+			if d2s is not None:
+				year = float(d2s.group(1).replace(",",""))+1911
+				month = float(d2s.group(2).replace(",",""))
+				day = float(d2s.group(3).replace(",",""))
+				record.d2 = "%04d%02d%02d"%(year,month,day)
+				self.debug_print(swift_index,line,record.d2)
+				continue
+
+			d3s = re.match(u"更正日期〆([\d]+)\D+([\d]+)\D+([\d]+)\D+",line,re.U)
+			if d3s is not None:
+				year = float(d3s.group(1).replace(",",""))+1911
+				month = float(d3s.group(2).replace(",",""))
+				day = float(d3s.group(3).replace(",",""))
+				record.d3 = "%04d%02d%02d"%(year,month,day)
+				self.debug_print(swift_index,line,record.d2)
+				continue
 
 
 
-			if swift_index>60 :
-				break
-			self.data.append(record)
+
+			#if swift_index>60 :
+			#	break
+		self.data.append(record)
 		inF.close()
 		self.output()
 	
