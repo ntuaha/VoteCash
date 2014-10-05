@@ -156,7 +156,7 @@ class TF:
 				continue
 
 
-			r07s = re.match(u".*金錢收入總額〆([\d,]+)\D+",line,re.U)
+			r07s = re.match(u".*金錢收入總額\D*([\d,]+)\D+",line,re.U)
 			if r07s is not None:
 				record.r07 = float(r07s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.r07)
@@ -168,7 +168,7 @@ class TF:
 				self.debug_print(swift_index,line,record.r08)
 				continue
 
-			r09s = re.match(u".*非金錢收入總額〆([\d,]+)\D+",line,re.U)
+			r09s = re.match(u".*非金錢收入總額\D*([\d,]+)\D+",line,re.U)
 			if r09s is not None:
 				record.r09 = float(r09s.group(1).replace(",",""))
 				self.debug_print(swift_index,line,record.r09)
