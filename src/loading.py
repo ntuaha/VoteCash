@@ -1,12 +1,12 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 
 
-import sys 
+import sys
 import os
 import re
 import psycopg2
-reload(sys) 
-sys.setdefaultencoding('utf8') 
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class Loading:
 	database=""
@@ -31,7 +31,7 @@ class Loading:
 	#啟用DB
 	def startDB(self):
 		self.conn = psycopg2.connect(database=self.database, user=self.user, password=self.password, host=self.host, port=self.port)
-		self.cur = self.conn.cursor()	
+		self.cur = self.conn.cursor()
 
 	def inputData(self,f):
 		fp = open(f,"r")
@@ -57,27 +57,28 @@ class Loading:
 			total_p = 0
 			for x in map(int,cols[8:18]):
 				total_p = total_p +x
-			
+
 			rep = cols[0].replace("七","7").replace("二","2")
 			R = re.match(u"\D*(\d+)\D*",rep.decode("utf-8"),re.U)
 			num = int(R.group(1))
-			
+
 			R = re.match(u"(.*)(\d+年?|第\d+任|第\d+屆)(鎮長出缺補選|縣長出缺補選)",rep.decode("utf-8"),re.U)
 			if R is not None:
 				cols[-3] = R.group(2)
 				cols[-1] = R.group(3)
 				cols[-2] = R.group(1)
 
+
 			sql = "INSERT INTO abt01 (vote_id,term,position,area,term_n,total_r,total_p) values (%d,'%s','%s','%s',%d,%d,%d)"%(data_num,cols[-3],cols[-1],cols[-2],num,total_r,total_p)
 			#print sql
 			self.cur.execute(sql)
 			self.conn.commit()
-		
+
 		fp.close()
 
 
 	#結束DB
-	def endDB(self):	
+	def endDB(self):
 		self.cur.close()
 		self.conn.close()
 

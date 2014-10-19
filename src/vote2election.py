@@ -26,8 +26,8 @@ sys.setdefaultencoding('utf8')
 class SQL:
 	conn = None
 	cur = None
-	def __init__(self,filepath):
-		f = open(filepath,'r')
+	def __init__(self):
+		f = open(os.path.abspath('../link.info'),'r')
 		self.database = f.readline()[:-1]
 		self.user = f.readline()[:-1]
 		self.password = f.readline()[:-1]
@@ -57,10 +57,10 @@ class SQL:
 
 
 
-class EXTRACT:
+class VOTE2ELECTION:
 	election_id = None
-	def __init__(self,filepath):
-		f = open(filepath,'r')
+	def __init__(self):
+		f = open(os.path.abspath('../link.info'),'r')
 		self.database = f.readline()[:-1]
 		self.user = f.readline()[:-1]
 		self.password = f.readline()[:-1]
@@ -82,7 +82,15 @@ class EXTRACT:
 	#建立更新資料庫
 	def rebuildTable(self,sql):
 		print '執行重建Table'
+		sql = os.path.abspath('../sql/vote2election.sql')
 		os.system('psql -d %s -f %s'%(self.database,sql))
+
+	def map(self):
+		sql = "SELECT A.election_id,A.year,A.main_type,C.name from election A left join election_attr C on A.election_id = C.election_id"
+		self.cur.execute(sql)
+		for row in self.cur.fetchall():
+			sql = "SELECT vote_id,title from votecash where title like '%%%s%%' and title like '%%%s%%'  and cond_name = "
+
 
 	def query_cand_from_github(self,parm):
 		[self.election_id,position,title] = parm
@@ -272,19 +280,8 @@ class EXTRACT:
 
 if __name__ == '__main__':
 	#1: sql posistion
-	path = os.path.abspath('../link.info')
-	print path
-	e = EXTRACT(path)
-	e.rebuildTable('../sql/election_record.sql')
-	#e.rebuildTable('../sql/election_attr.sql')
-	s = SQL(path)
-	records = s.startDB().getVoteID()
-	for r in records:
-		for  k in r:
-			print k
-		#e.query(r[0],r[1],r[2])
-		#e.query_cand(r)
-		e.query_cand_from_github(r)
 
-	s.endDB()
+	e = VOTE2ELECTION()
+	e.rebuildTable()
+	e.map()
 	e.end()
