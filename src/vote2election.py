@@ -217,13 +217,87 @@ class VOTE2ELECTION:
 						self.conn.commit()
 
 			elif main_type =='直轄市里長' and sub_type=='選舉':
-				print term
-				print area
+				#print term
+				#print area
 				term2 = term
 				term = '%d'%((int(term)-75)/4)
 				title = area.decode('utf-8')[-1]+"長"
 				# 屆數
 				sql = "SELECT vote_id,title from votecash where title like '%%%s%%'  and title like '%%%s%%'  and  title like '%%%s%%' and split_part(cand_name,'、',1) = '%s'"%(term,area,title,name)
+				#print sql
+				self.cur.execute(sql)
+				r2 = self.cur.fetchall()
+				for rr in r2:
+					print rr
+					sql = "INSERT INTO vote2election (vote_id, election_id, area, name, main_type, sub_type, term) VALUES (%s,'%s','%s','%s','%s','%s',%s)"%(rr[0],election_id,area,name,main_type,sub_type,term)
+					#print "rr: "+sql+"\n"
+					self.cur.execute(sql)
+					self.conn.commit()
+
+				if len(r2) == 0:
+					term = '%d'%((int(term2)-95)/4)
+					sql = "SELECT vote_id,title from votecash where title like '%%%s%%'  and title like '%%%s%%'  and  title like '%%%s%%' and split_part(cand_name,'、',1) = '%s'"%(term,area,title,name)
+					#print sql
+					self.cur.execute(sql)
+					r2 = self.cur.fetchall()
+					for rr in r2:
+						#print rr
+						sql = "INSERT INTO vote2election (vote_id, election_id, area, name, main_type, sub_type, term) VALUES (%s,'%s','%s','%s','%s','%s',%s)"%(rr[0],election_id,area,name,main_type,sub_type,term)
+						#print "rr: "+sql+"\n"
+						self.cur.execute(sql)
+						self.conn.commit()
+
+			elif main_type =='直轄市議員' and sub_type=='選舉':
+				#print term
+				area = area.decode('utf-8')[0:3]
+				#print area
+				term2 = term
+				if (area=='新北市' or area=='高雄市' or area=='臺中市' or area=='臺南市') and term>95:
+					term = "%d"%((int(term)-95)/4)
+				elif area=="臺北市":
+					term = '%d'%((int(term)-45)/4)
+				elif area=="高雄市":
+					term = '%d'%((int(term)-63)/4)
+
+				title = "市議員"
+				# 屆數
+				sql = "SELECT vote_id,title from votecash where title like '%%%s%%'  and title like '%%%s%%'  and  title like '%%%s%%' and split_part(cand_name,'、',1) = '%s'"%(term,area,title,name)
+				#print sql
+				self.cur.execute(sql)
+				r2 = self.cur.fetchall()
+				for rr in r2:
+					#print rr
+					sql = "INSERT INTO vote2election (vote_id, election_id, area, name, main_type, sub_type, term) VALUES (%s,'%s','%s','%s','%s','%s',%s)"%(rr[0],election_id,area,name,main_type,sub_type,term)
+					#print "rr: "+sql+"\n"
+					self.cur.execute(sql)
+					self.conn.commit()
+
+			elif main_type =='縣市議員' and sub_type=='選舉':
+				#print term
+				area = area.decode('utf-8')[0:3]
+				#print area
+
+				title = area[2]+"議員"
+				# 屆數
+				sql = "SELECT vote_id,title from votecash where  title like '%%%s%%'  and  title like '%%%s%%' and split_part(cand_name,'、',1) = '%s'"%(area,title,name)
+				#print sql
+				self.cur.execute(sql)
+				r2 = self.cur.fetchall()
+				for rr in r2:
+					#print rr
+					sql = "INSERT INTO vote2election (vote_id, election_id, area, name, main_type, sub_type, term) VALUES (%s,'%s','%s','%s','%s','%s',%s)"%(rr[0],election_id,area,name,main_type,sub_type,term)
+					#print "rr: "+sql+"\n"
+					self.cur.execute(sql)
+					self.conn.commit()
+
+			elif main_type =='鄉鎮市民代表' and sub_type=='選舉':
+				print term
+				area = re.match('(\D+)第\d{2}選舉區',area,re.U).groups()[0]
+				print area
+
+				title = area.decode('utf-8')[-1]+"民代表"
+				# 屆數
+				sql = "SELECT vote_id,title from votecash where  title like '%%%s%%'  and  title like '%%%s%%' and split_part(cand_name,'、',1) = '%s'"%(area,title,name)
 				print sql
 				self.cur.execute(sql)
 				r2 = self.cur.fetchall()
@@ -234,18 +308,6 @@ class VOTE2ELECTION:
 					self.cur.execute(sql)
 					self.conn.commit()
 
-				if len(r2) == 0:
-					term = '%d'%((int(term2)-95)/4)
-					sql = "SELECT vote_id,title from votecash where title like '%%%s%%'  and title like '%%%s%%'  and  title like '%%%s%%' and split_part(cand_name,'、',1) = '%s'"%(term,area,title,name)
-					print sql
-					self.cur.execute(sql)
-					r2 = self.cur.fetchall()
-					for rr in r2:
-						print rr
-						sql = "INSERT INTO vote2election (vote_id, election_id, area, name, main_type, sub_type, term) VALUES (%s,'%s','%s','%s','%s','%s',%s)"%(rr[0],election_id,area,name,main_type,sub_type,term)
-						print "rr: "+sql+"\n"
-						self.cur.execute(sql)
-						self.conn.commit()
 
 
 
@@ -253,15 +315,13 @@ class VOTE2ELECTION:
 
 
 
- #國大代表
- #直轄市里長
- #鄉鎮市民代表
- #直轄市議員
-# 臺灣省議員
+ #國大代表@@
+ #鄉鎮市民代表@@
+# 臺灣省議員@@
 
- #縣市議員
+ #縣市議員@@
 
-# 臺灣省長
+# 臺灣省長@@
 
 
 
