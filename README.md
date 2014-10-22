@@ -3,7 +3,7 @@
 
 ## 資料概況
 
-目前透過中選會選舉資料與監察院政治現金兩邊選舉的標題，人名，屆數，來判讀兩邊資料的串接，因此以下徵求有志一同的人士一起來提升資料的正確性，歡迎[來信給我](ntuaha@gmail.com)或者fork這個專案
+目前透過中選會選舉資料與監察院政治現金兩邊選舉的標題，人名，屆數，來判讀兩邊資料的串接，因此以下徵求有志一同的人士一起來提升資料的正確性，歡迎來信給我[ntuaha@gmail.com](mailto:ntuah@gmail.com)或者fork這個專案
 
 
 - 選舉金流資料筆數  6261
@@ -25,8 +25,9 @@
 
 
 ## 資料來源
-[監察院政治獻金](http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp)
-[中選會選舉資訊kiang整理版](https://github.com/kiang/sunshine.cy.gov.tw)
+
+- [監察院政治獻金](http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp)
+- [中選會選舉資訊kiang整理版](https://github.com/kiang/sunshine.cy.gov.tw)
 
 
 
