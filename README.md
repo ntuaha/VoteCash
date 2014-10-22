@@ -15,7 +15,7 @@
 
 ## 整理好的資料位置
 
-- [votecash](https://github.com/ntuaha/VoteCash/blob/gh-pages/data/vatecash.csv) 選舉金流資料
+- [votecash](https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votecash.csv) 選舉金流資料
 - [vote2election](https://github.com/ntuaha/VoteCash/blob/gh-pages/data/vote2election.csv) 金流與投票資料對照表, 主要的最大表
 - [election](https://github.com/ntuaha/VoteCash/blob/gh-pages/data/election_attr.csv) 各屆選舉資訊
 - [election_record](https://github.com/ntuaha/VoteCash/blob/gh-pages/data/election_record.csv) 選舉投票成果
