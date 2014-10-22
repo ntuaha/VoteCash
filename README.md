@@ -15,7 +15,11 @@
 
 ## 整理好的資料位置
 
-
+- [votecash]() 選舉金流資料
+- [vote2election]() 金流與投票資料對照表, 主要的最大表
+- [election]() 各屆選舉資訊
+- [election_record]() 選舉投票成果
+- [eleciton_attr]() 各屆選舉屬性（包含選舉人數，性別，整體投票率)
 
 
 
