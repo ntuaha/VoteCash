@@ -89,8 +89,6 @@ class CHECK:
 		return sql
 
 
-
-
 class VOTE2ELECTION:
 	election_id = None
 	check = None
