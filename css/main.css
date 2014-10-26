@@ -1,7 +1,4 @@
-body{
 
-  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
-}
 .main_bg{
   transition-delay: 0s;
   background-color: white;
@@ -15,7 +12,7 @@ body{
 
 
 
-H1,H2,H3,H3,H4{
+div.row H1,H2,H3,H3,H4{
   color:rgb(44,157,142);
 }
 div.row div{
