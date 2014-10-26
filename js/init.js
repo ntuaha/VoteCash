@@ -1,3 +1,3 @@
 $(function(){
-$("body").html("HI")
+$("body").html("HI");
 })
