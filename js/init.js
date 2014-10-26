@@ -1,3 +1,6 @@
 $(function(){
-$("body").html("HI");
+
+
+$("<div></div>").html("HI").appendTo("body");
+
 })
