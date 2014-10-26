@@ -1,0 +1,35 @@
+body{
+
+  font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+}
+.main_bg{
+  transition-delay: 0s;
+  background-color: white;
+  line-height: 32px;
+  border-radius: 2px;
+  font-size: 0.9em;
+  color: #646464;
+  border-bottom: 1px solid rgb(44,157,142);
+
+}
+
+
+
+H1,H2,H3,H3,H4{
+  color:rgb(44,157,142);
+}
+div{
+  color:#868686;
+}
+
+.white_bg{
+  background-color:rgba(255,255,255,0.5);
+}
+
+.row_padding{
+  margin-bottom: 20px;
+}
+
+.shadow{
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+}

@@ -11,7 +11,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.8/d3.min.js" charset="utf-8"></script>
 
   <!-- USER DEFINED -->
-  <style rel="./css/main.css"></style>
+  <link href="./css/main.css" rel="stylesheet">
   <script src="./js/init.js"></script>
 
 
@@ -19,12 +19,45 @@
 </head>
 
 <body>
-Content of the document......
+
+<div class="navbar  navbar-fixed-top main_bg " role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+    <!--Project Name -->
+      <a class="navbar-brand" href="#">VoteCash</a>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron shadow white_bg">
+  <div class="container ">
+  <h1>選舉金融指南</h1>
+  <p> I could either watch it happen, or be part of it  --  Elon Musk</p>
+  </div>
+</div>
+
+<div class="container ">
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
+      <h2>緣起</h2>
+      <p>每次選舉最重要的莫過於錢與人，如果我們能夠透過資料得知金錢與選票的關聯性，那麼對於之後有志從政的公民們，就更能有彈性去決定現在的自己是否已經準備好了．透過在台灣過去大大小小的選舉之中，我們可以透過中選會的資料．監察院裡面各個候選人所提報的選舉經費資訊，將這個民主政治中真正與權利，金流相關卻又十分陌生的一環接露出來．</p>
+    </div>
+  </div>
+  <div class="row row_padding">
+    <div class="col-md-6 shadow white_bg">
+      <h2>平均每個選舉需要的金額</h2>
+      <div id="avg_cost" class="col-md-12"></div>
+    </div>
+    <div class="col-md-6 shadow white_bg">
+      <h2>平均每個選舉需要的金額</h2>
+      <div id="avg_cost" class="col-md-12"></div>
+    </div>
+  </div>
 
 
 
-
-
+</div>
+<div class="container">
 <!-- DISQUE -->
 <div id="disqus_thread"></div>
   <script type="text/javascript">
@@ -39,6 +72,15 @@ Content of the document......
       })();
   </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+
+
+
+
+
+
+
 
 
 <!-- Boostrap-->
