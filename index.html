@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="body">
 
 <div class="navbar  navbar-fixed-top main_bg " role="navigation">
   <div class="container">
@@ -31,8 +31,9 @@
 
 <div class="jumbotron shadow white_bg">
   <div class="container ">
-  <h1>選舉金融指南</h1>
-  <p> I could either watch it happen, or be part of it  --  Elon Musk</p>
+  <h1>台灣選舉指南</h1>
+  <p> It could either watch it happens, or be part of it.</p>
+  <footer>Elon Musk</footer>
   </div>
 </div>
 
@@ -40,19 +41,80 @@
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
       <h2>緣起</h2>
-      <p>每次選舉最重要的莫過於錢與人，如果我們能夠透過資料得知金錢與選票的關聯性，那麼對於之後有志從政的公民們，就更能有彈性去決定現在的自己是否已經準備好了．透過在台灣過去大大小小的選舉之中，我們可以透過中選會的資料．監察院裡面各個候選人所提報的選舉經費資訊，將這個民主政治中真正與權利，金流相關卻又十分陌生的一環接露出來．</p>
+      <p>每次選舉最重要的莫過於<strong>錢</strong>與<strong>人</strong>，如果我們能夠透過資料得<strong>金錢</strong>與<strong>選票</strong>的關聯性，就更能透過過去參與選舉的前輩們的成果，了解現在的自己是否已經準備好了．由於台灣過去大大小小的選舉資料可以透過<a href="http://db.cec.gov.tw">中選會</a>的資料．<a href="http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp">監察院</a>裡面各個候選人所提報的選舉經費資訊，將這個民主政治中真正和權利與金流相關的議題卻又十分陌生的一環接露出來，希望能對於新生代的政治參與者與公民幫到任何一點忙．</p>
+
+      <h2>探討問題</h2>
+      <p>由於本次目標是提供有意義的資訊給要<strong>參與選舉活動的公民</strong>，因此本次將針對:</p>
+      <ol>
+      <li>  平均來說一張票值多少，不同層級選舉是否有差(例如總統與里長)</li>
+      <li>  所屬政黨會不會影響每票需要的花費</li>
+      <li>  勝選候選人每張票大概都投資多少 </li>
+      <li>  平均要拿下每個層級選舉多少比例的票才能勝選 </li>
+      </ol>
+      <p>  當我們越能了解打算投身的<strong>選舉區域</strong>與<strong>選舉經費</strong>費用，那麼選戰最重要的基礎也就有了，剩下就是看個人能力了!</p>
+
+      <h2>資料範圍</h2>
+      <div class="col-md-8 col-md-offset-2 ">
+        <table class="table table-hover" id="data_source">
+         <thead><td>項目</td><td>筆數</td></thead>
+         <hbody>
+           <tr><td>選舉金流資料</td><td>6261</td></tr>
+          <tr><td>選舉投票資料</td><td>33643</td></tr>
+          <tr><td>選舉種類</td><td>58</td></tr>
+          <tr><td>比對成功可分析的選舉資訊</td><td>3817</td></tr>
+          <tr><td>選舉年度</td><td>8</td></tr>
+         </hbody>
+        </table>
+        </div>
     </div>
   </div>
+
+  <!-- Figure1 -->
   <div class="row row_padding">
-    <div class="col-md-5 shadow white_bg">
-      <h2>平均每個選舉需要的金額</h2>
-      <div id="avg_cost" class="col-md-12"></div>
-    </div>
-    <div class="col-md-5 col-md-offset-2 shadow white_bg">
-      <h2>平均每個選舉每張選票需要的花費</h2>
-      <div id="avg_cost2" class="col-md-12"></div>
+    <div class="col-md-12 shadow white_bg">
+        <img src="./res/F1.png" alt="平均每個層次每張選票需要的花費" class="img-thumbnail img-responsive"/>
+
+      <h2>一票值多少</h2>
+        <ol>
+        <li>透過這個簡單的分析可以看見，<strong>村里長每張票所需要的金額一個50銅板就有找，同時選里長需要的票數也是各層級較少的</strong>，如果經費有限制的話，不仿從里長開始進行一開始的選舉之路．</li>
+        <li>令人驚訝的事情是<strong>選總統需要的金額居然只要86元就可以，這是每張選票的價值中第三低的</strong>，不過考慮到當選需要的票數，除非真的擁有全國性的高知名度，真的不建議直接選總統（後面會再探討)．</li>
+        <li>最後可以看見不論是鄉鎮市集，縣市，直轄市，全國哪一個等級，<strong>民意代表的每張票價值都是比地方或全國首長還要高</strong>，這是否隱含當民代的權力與後續帶來的好處都比較好呢?這是值得後續探究的問題</li>
+        </ol>
     </div>
   </div>
+<!-- Figure2 -->
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
+      <h2>平均每個層次每張選票需要的花費</h2>
+      <div id="avg_cost" class="col-md-8"></div>
+      <div id="avg_cost" class="col-md-3 col-md-offset-1">
+asfasfffdffdsfdasdf
+      </div>
+    </div>
+  </div>
+
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
+      <h2>資料來源</h2>
+
+    <dl class="dl-horizontal">
+      <dt><a href="http://db.cec.gov.tw">中選會</a></dt>
+      <dd>可以獲得歷屆選舉投票狀況，本次研究是利用<a href="https://github.com/kiang/sunshine.cy.gov.tw">Kiang的sunshine</a>專案已經整理過後的資料</dd>
+      <dt><a href="http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp">監察院</a></dt>
+      <dd>可以獲得歷屆選舉每個候選人金流狀況，本次研究是利用<a href="https://raw.githubusercontent.com/kiang/sunshine.cy.gov.tw/master/report2csv.csv">Kiang的sunshine</a>專案已經整理過後的資料，但仍有部分的資料尚未完整補上</dd>
+    </dl>
+
+    <h2>特別感謝</h2>
+
+      <ol>
+      <li> Kiang </li>
+      <li> clkao </li>
+      <li> Ronny Wang </li>
+      </ol>
+
+    </div>
+  </div>
+
 
 </div>
 

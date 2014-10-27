@@ -1,3 +1,7 @@
+.body{
+ background-color:#C8C8C8;
+}
+
 
 .main_bg{
   transition-delay: 0s;
@@ -16,15 +20,23 @@ div.row H1,H2,H3,H3,H4{
   color:rgb(44,157,142);
 }
 div.row div{
-  color:#868686;
+  color:black;
+  font-size:1.2em;
 }
 
+
+
+strong{
+  color:#ffaa22;
+}
+
+
 .white_bg{
-  background-color:rgba(255,255,255,0.5);
+  background-color:rgba(255,255,255,1);
 }
 
 .row_padding{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .shadow{
