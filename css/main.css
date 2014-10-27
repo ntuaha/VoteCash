@@ -15,10 +15,6 @@
 }
 
 
-
-div.row H1,H2,H3,H3,H4{
-  color:rgb(44,157,142);
-}
 div.row div{
   color:black;
   font-size:1.2em;
@@ -27,7 +23,7 @@ div.row div{
 
 
 strong{
-  color:#ffaa22;
+  color:rgb(44,157,142);
 }
 
 
