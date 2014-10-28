@@ -20,7 +20,7 @@
 
 <body class="body">
 
-<div class="navbar  navbar-fixed-top main_bg " role="navigation">
+<div class="navbar  navbar-fixed-top main_bg shadow " role="navigation">
   <div class="container">
     <div class="navbar-header">
     <!--Project Name -->
@@ -92,14 +92,31 @@
         <li>令人驚訝的事情是<strong>選總統需要的金額居然只要86元就可以，這是每張選票的價值中第三低的</strong>，不過考慮到當選需要的票數，除非真的擁有全國性的高知名度，真的不建議直接選總統（後面會再探討)．</li>
         <li>最後可以看見不論是鄉鎮市集，縣市，直轄市，全國哪一個等級，<strong>民意代表的每張票價值都是比地方或全國首長還要高</strong>，這是否隱含當民代的權力與後續帶來的好處都比較好呢?這是值得後續探究的問題</li>
         </ol>
+
     </div>
   </div>
+
 <!-- Figure2 -->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>平均每個層次每張選票需要的花費</h2>
-      <div id="avg_cost" class="col-md-8"></div>
-      <div id="avg_cost" class="col-md-3 col-md-offset-1">
+      <h2>政黨每張票需要的花費的金額</h2>
+
+
+      <p>第一張為民意代表在各政黨的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．</p>
+
+        <img src="./res/F2.png" alt="民意代表" class="img-thumbnail img-responsive shadow row_padding"/>
+
+        <p>第二張為全國或地方首長在各政黨的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．</p>
+
+        <img src="./res/F3.png" alt="民意代表" class="img-thumbnail img-responsive shadow row_padding"/>
+
+ <ol>
+        <li>透過這個簡單的分析可以看見，<strong>村里長每張票所需要的金額一個50銅板就有找，同時選里長需要的票數也是各層級較少的</strong>，如果經費有限制的話，不仿從里長開始進行一開始的選舉之路．</li>
+        <li>令人驚訝的事情是<strong>選總統需要的金額居然只要86元就可以，這是每張選票的價值中第三低的</strong>，不過考慮到當選需要的票數，除非真的擁有全國性的高知名度，真的不建議直接選總統（後面會再探討)．</li>
+        <li>最後可以看見不論是鄉鎮市集，縣市，直轄市，全國哪一個等級，<strong>民意代表的每張票價值都是比地方或全國首長還要高</strong>，這是否隱含當民代的權力與後續帶來的好處都比較好呢?這是值得後續探究的問題</li>
+        </ol>
+
+
       </div>
     </div>
   </div>
