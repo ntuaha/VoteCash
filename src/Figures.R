@@ -30,13 +30,13 @@ ggplot(df_avg,aes(x=main_type,fill=main_type))+geom_histogram()+
 
 
 
-df_avg = select(mutate(df,avg = cost/vote_cnt),cost,vote_cnt,avg,main_type,position_level,party)
+df_avg = select(mutate(df,avg = cost/vote_cnt),cost,vote_cnt,avg,main_type,position_level,party,leader_ind)
 df_avg = mutate(df_avg,main_type = as.factor(main_type))
 
 
 
 give.n <- function(x){
-  return(c(y = median(x)*0.7, label = length(x))) 
+  return(c(y = median(x)-10, label = length(x))) 
   # experiment with the multiplier to find the perfect position
 }
 
@@ -62,12 +62,68 @@ ggplot(df_avg,aes(x=reorder(main_type,-position_level),y=avg,fill=main_type))+ge
 
 #Figure2
 
+df_avg2 = df_avg
 
+df_avg2[df_avg2[,"party"]=="無","party"]="無黨籍及未經政黨推薦"
+df_avg2 = filter(df_avg2,(party=="中國國民黨" | party=="民主進步黨" | party=="無黨籍及未經政黨推薦")&leader_ind==0)
 
-df_avg2 = filter(df_avg,party=="中國國民黨" | party=="民主進步黨" | party=="無黨籍及未經政黨推薦")
 ggplot(df_avg2,aes(x=reorder(main_type,-position_level),y=avg,fill=main_type))+
   geom_boxplot(aes(alpha=.5))+
   facet_grid( party~.,scales="free_x")+
+  coord_flip()+
+  labs(x='層級',y='平均每票花費(元新台幣)',title='民意代表各黨一票值多少?')+
+  scale_y_continuous(limits=c(0,300))+
+  #stat_summary(fun.data = give.n, geom = "text", fun.y = median, colour = "red") +
+  stat_summary(fun.data = median.n, geom = "text", fun.y = median)+
+  theme(# for OS X (XQuartz device) to show Chinese characters
+    text=element_text(family='Heiti TC Light'), 
+    # rotate angle of x ticks
+    axis.text.x=element_text(size=14, hjust=1, vjust=.5,color="black"),
+    axis.text.y=element_text(size=14,color="#2c9893"),
+    # change size of title
+    plot.title=element_text(size=26)) 
+
+
+
+#Figure3
+
+df_avg2 = df_avg
+
+df_avg2[df_avg2[,"party"]=="無","party"]="無黨籍及未經政黨推薦"
+df_avg2 = filter(df_avg2,(party=="中國國民黨" | party=="民主進步黨" | party=="無黨籍及未經政黨推薦")&leader_ind==1)
+
+ggplot(df_avg2,aes(x=reorder(main_type,-position_level),y=avg,fill=main_type))+
+  geom_boxplot(aes(alpha=.5))+
+  facet_grid( party~.,scales="free_x")+
+  coord_flip()+
+  labs(x='層級',y='平均每票花費(元新台幣)',title='政黨的各級首長一票值多少?')+
+  scale_y_continuous(limits=c(0,300))+
+  stat_summary(fun.data = give.n, geom = "text", fun.y = median, colour = "red") +
+  stat_summary(fun.data = median.n, geom = "text", fun.y = median)+
+  theme(# for OS X (XQuartz device) to show Chinese characters
+    text=element_text(family='Heiti TC Light'), 
+    # rotate angle of x ticks
+    axis.text.x=element_text(size=14, hjust=1, vjust=.5,color="black"),
+    axis.text.y=element_text(size=14,color="#2c9893"),
+    # change size of title
+    plot.title=element_text(size=26)) 
+
+
+
+
+
+
+
+#Figure2
+
+df_avg2 = df_avg
+
+df_avg2[df_avg2[,"party"]=="無","party"]="無黨籍及未經政黨推薦"
+df_avg2 = filter(df_avg2,party=="中國國民黨" | party=="民主進步黨" | party=="無黨籍及未經政黨推薦")
+
+ggplot(df_avg2,aes(x=reorder(main_type,-position_level),y=avg,fill=main_type))+
+  geom_boxplot(aes(alpha=.5))+
+  facet_grid( party~leader_ind,scales="free_x")+
   coord_flip()+
   labs(x='層級',y='平均每票花費(元新台幣)',title='各黨一票值多少?')+
   scale_y_continuous(limits=c(0,300))+
@@ -80,6 +136,8 @@ ggplot(df_avg2,aes(x=reorder(main_type,-position_level),y=avg,fill=main_type))+
     axis.text.y=element_text(size=14,color="#2c9893"),
     # change size of title
     plot.title=element_text(size=26)) 
+
+
   
 
 
