@@ -42,7 +42,11 @@
     <div class="col-md-12 shadow white_bg">
       <h2>緣起</h2>
       <p>每次選舉最重要的莫過於<strong>錢</strong>與<strong>人</strong>，如果我們能夠透過資料得<strong>金錢</strong>與<strong>選票</strong>的關聯性，就更能透過過去參與選舉的前輩們的成果，了解現在的自己是否已經準備好了．由於台灣過去大大小小的選舉資料可以透過<a href="http://db.cec.gov.tw">中選會</a>的資料．<a href="http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp">監察院</a>裡面各個候選人所提報的選舉經費資訊，將這個民主政治中真正和權利與金流相關的議題卻又十分陌生的一環接露出來，希望能對於新生代的政治參與者與公民幫到任何一點忙．</p>
+      </div>
+    </div>
 
+    <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
       <h2>探討問題</h2>
       <p>由於本次目標是提供有意義的資訊給要<strong>參與選舉活動的公民</strong>，因此本次將針對:</p>
       <ol>
@@ -52,9 +56,13 @@
       <li>  平均要拿下每個層級選舉多少比例的票才能勝選 </li>
       </ol>
       <p>  當我們越能了解打算投身的<strong>選舉區域</strong>與<strong>選舉經費</strong>費用，那麼選戰最重要的基礎也就有了，剩下就是看個人能力了!</p>
+      </div>
+      </div>
 
+      <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
       <h2>資料範圍</h2>
-      <div class="col-md-8 col-md-offset-2 ">
+      <div class="col-md-6 col-md-offset-3 ">
         <table class="table table-hover" id="data_source">
          <thead><td>項目</td><td>筆數</td></thead>
          <hbody>
@@ -66,15 +74,19 @@
          </hbody>
         </table>
         </div>
+        </div>
     </div>
-  </div>
+
 
   <!-- Figure1 -->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-        <img src="./res/F1.png" alt="平均每個層次每張選票需要的花費" class="img-thumbnail img-responsive"/>
+    <h2>一票值多少</h2>
+        <p>橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．</p>
 
-      <h2>一票值多少</h2>
+        <img src="./res/F1.png" alt="平均每個層次每張選票需要的花費" class="img-thumbnail img-responsive shadow row_padding"/>
+
+
         <ol>
         <li>透過這個簡單的分析可以看見，<strong>村里長每張票所需要的金額一個50銅板就有找，同時選里長需要的票數也是各層級較少的</strong>，如果經費有限制的話，不仿從里長開始進行一開始的選舉之路．</li>
         <li>令人驚訝的事情是<strong>選總統需要的金額居然只要86元就可以，這是每張選票的價值中第三低的</strong>，不過考慮到當選需要的票數，除非真的擁有全國性的高知名度，真的不建議直接選總統（後面會再探討)．</li>
@@ -97,15 +109,19 @@
       <h2>資料來源</h2>
 
     <dl class="dl-horizontal">
+      <dt><a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votemart.csv">分析使用資料表</a></dt>
+      <dd>大家也可以透過這個資料，配合<a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/src/Figures.R">Github</a>上的處理程式，也能開始進行分析</dd>
       <dt><a href="http://db.cec.gov.tw">中選會</a></dt>
       <dd>可以獲得歷屆選舉投票狀況，本次研究是利用<a href="https://github.com/kiang/sunshine.cy.gov.tw">Kiang的sunshine</a>專案已經整理過後的資料</dd>
       <dt><a href="http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp">監察院</a></dt>
       <dd>可以獲得歷屆選舉每個候選人金流狀況，本次研究是利用<a href="https://raw.githubusercontent.com/kiang/sunshine.cy.gov.tw/master/report2csv.csv">Kiang的sunshine</a>專案已經整理過後的資料，但仍有部分的資料尚未完整補上</dd>
+
     </dl>
 
     <h2>特別感謝</h2>
 
       <ol>
+      <li> Johnson Hsieh </li>
       <li> Kiang </li>
       <li> clkao </li>
       <li> Ronny Wang </li>

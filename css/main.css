@@ -32,11 +32,11 @@ strong{
 }
 
 .row_padding{
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .shadow{
   box-shadow: 0px 8px 17px 0  rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
+  border-radius: 2px;
 
 }
