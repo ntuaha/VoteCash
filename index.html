@@ -25,6 +25,12 @@
     <div class="navbar-header">
     <!--Project Name -->
       <a class="navbar-brand" href="#">VoteCash</a>
+      <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="http://ntuaha.github.io/about/">@ aha </a></li>
+          <li><a href="https://github.com/ntuaha/VoteCash">VoteCash on Github</a></li>
+          <li><a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votemart.csv">Data</a></li>
+          <li><a href="mailto:ntuaha@gmail.com">Contact Me</a></li>
+        </ul>
     </div>
   </div>
 </div>
@@ -53,7 +59,7 @@
       <li>  平均來說一張票值多少，不同層級選舉是否有差(例如總統與里長)</li>
       <li>  所屬政黨會不會影響每票需要的花費</li>
       <li>  勝選候選人每張票大概都投資多少 </li>
-      <li>  平均要拿下每個層級選舉多少比例的票才能勝選 </li>
+      <li>  連任是否有經費優勢 </li>
       </ol>
       <p>  當我們越能了解打算投身的<strong>選舉區域</strong>與<strong>選舉經費</strong>費用，那麼選戰最重要的基礎也就有了，剩下就是看個人能力了!</p>
       </div>
@@ -89,24 +95,24 @@
 
         <ol>
         <li>透過這個簡單的分析可以看見，<strong>村里長每張票所需要的金額一個50銅板就有找，同時選里長需要的票數也是各層級較少的</strong>，如果經費有限制的話，不仿從里長開始進行一開始的選舉之路．</li>
-        <li>令人驚訝的事情是<strong>選總統需要的金額居然只要86元就可以，這是每張選票的價值中第三低的</strong>，不過考慮到當選需要的票數，除非真的擁有全國性的高知名度，真的不建議直接選總統（後面會再探討)．</li>
+        <li>令人驚訝的事情是<strong>選總統需要的金額居然只要86元就可以，這是每張選票的價值中第三低的</strong>，不過考慮到當選需要的票數，除非真的擁有全國性的高知名度，真的不建議直接選總統．</li>
         <li>最後可以看見不論是鄉鎮市集，縣市，直轄市，全國哪一個等級，<strong>民意代表的每張票價值都是比地方或全國首長還要高</strong>，這是否隱含當民代的權力與後續帶來的好處都比較好呢?這是值得後續探究的問題</li>
         </ol>
 
     </div>
   </div>
 
-<!-- Figure2 -->
+<!-- Figure2  3-->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
       <h2>政黨每張票需要的花費的金額</h2>
 
 
-      <p>第一張為民意代表在各政黨的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
+      <p>第一張為各政黨民意代表的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
 
         <img src="./res/F2.png" alt="民意代表" class="img-thumbnail img-responsive shadow row_padding"/>
 
-        <p>第二張為全國或地方首長在各政黨的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
+        <p>第二張為各政黨全國或地方首長的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
 
         <img src="./res/F3.png" alt="民意代表" class="img-thumbnail img-responsive shadow row_padding"/>
 
@@ -120,6 +126,74 @@
       </div>
     </div>
 
+
+<!-- Figure4-->
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
+      <h2>勝選與敗選每張票需要的花費的金額</h2>
+
+
+      <p>依勝敗選的票價．橫軸為<strong>選舉類別</strong>，縱軸單位<strong>元新台幣</strong>，．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
+
+        <img src="./res/F4.png" alt="勝選與敗選每張票需要的花費的金額" class="img-thumbnail img-responsive shadow row_padding"/>
+
+
+        <ol>
+        <li>在縣市長以上，地方首長當選的花的金額都沒當選比較<strong>少</strong></li>
+        <li>到了村里長要當選就是要<strong>花比較多錢</strong></li>
+        <li>選各級民代要當選也是要花比較多錢</li>
+        </ol>
+
+
+      </div>
+    </div>
+
+
+<!-- Figure5-->
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
+      <h2>連任每張票需要的花費的金額</h2>
+
+
+      <p>依勝敗選的票價．橫軸為<strong>選舉類別</strong>，縱軸單位<strong>元新台幣</strong>，．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數．水平左右為是否當選（左為當選，右為落選），而垂直分隔則是是否連任（上為連任，下為非現任）</p>
+
+        <img src="./res/F5.png" alt="連任每張票需要的花費的金額" class="img-thumbnail img-responsive shadow row_padding"/>
+
+
+        <ol>
+        <li>現任的當選人需要的金額比非現任的當選人還要少，很明顯現任的確有其優勢</li>
+        <li>由於五都資料是第一屆，所以沒有現任資料</li>
+        <li>可以看到很多人選里長都不花錢，但都沒上...</li>
+        </ol>
+
+
+      </div>
+    </div>
+
+
+
+<!-- Figure5-->
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
+      <h2>結論</h2>
+
+       <p>以下統整之前幾張圖表告訴我們幾件重要的事情</p>
+
+        <ol>
+        <li>選里長所需要的每張票的經費是最少的，但<strong>千萬不要不花錢，這鐵定落選</strong></li>
+        <li>總統其實是另一個層級要得到一張票ＣＰ值高的職務，但要有足夠的財力，不過這會是一個非常優質的投資</li>
+        <li><strong>各級民意代表其實應該是最有錢或者是權力的職位</strong>，從每張票所需要花費的金額來說都是非常的高</li>
+        <li>在鄉鎮市長以下的選舉，政黨並不影響每張票的價值，也就是說台灣還是<strong>地方政治角力為主要的政治基底</strong></li>
+        </ol>
+
+        <p>這個工作還沒有完成，還有很多事情需要補完，像是<strong>互動式圖表</strong>，各年度經費需要透過<strong>CPI修正</strong>，納入各鄉鎮實質可投票人數去了解各鄉鎮區域要贏就要花多少錢，或者是深入瞭解勝選人經費花費的結構，這些有趣的議題都還埋藏在這份資料之中．也因此歡迎<strong>有興趣的人聯絡我</strong>，一起把這些資訊往下專研揭露出來，讓之後有興趣投身政治的人，對於選戰所需的資源有初步快速的瞭解</p>
+
+
+      </div>
+    </div>
+
+
+  <!-- Data source -->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
       <h2>資料來源</h2>
@@ -133,6 +207,11 @@
       <dd>可以獲得歷屆選舉每個候選人金流狀況，本次研究是利用<a href="https://raw.githubusercontent.com/kiang/sunshine.cy.gov.tw/master/report2csv.csv">Kiang的sunshine</a>專案已經整理過後的資料，但仍有部分的資料尚未完整補上</dd>
 
     </dl>
+    </div>
+  </div>
+  <!-- 最後感謝 -->
+  <div class="row row_padding">
+    <div class="col-md-12 shadow white_bg">
 
     <h2>特別感謝</h2>
 
