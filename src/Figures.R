@@ -125,7 +125,7 @@ df_avg2[df_avg2[,"elect_ind"]=="t","elect_ind"]="當選"
 ggplot(df_avg2,aes(x=reorder(main_type,position_level),y=avg,fill=main_type))+
   geom_boxplot(aes(alpha=.5))+
   facet_grid( .~elect_ind,scales="free_x")+
-  labs(x='層級',y='平均每票花費(元新台幣)',title='政黨的各級首長一票值多少?')+
+  labs(x='層級',y='平均每票花費(元新台幣)',title='當選一票值多少?')+
   scale_y_continuous(limits=c(0,300))+
   stat_summary(fun.data = give.n, geom = "text", fun.y = median, colour = "red") +
   stat_summary(fun.data = median.n, geom = "text", fun.y = median)+
@@ -153,7 +153,7 @@ df_avg2[df_avg2[,"incumbent_ind"]=="t","incumbent_ind"]="連任"
 ggplot(df_avg2,aes(x=reorder(main_type,position_level),y=avg,fill=main_type))+
   geom_boxplot(aes(alpha=.5))+
   facet_grid( incumbent_ind~elect_ind,scales="free_x")+
-  labs(x='層級',y='平均每票花費(元新台幣)',title='政黨的各級首長一票值多少?')+
+  labs(x='層級',y='平均每票花費(元新台幣)',title='連任一票值多少?')+
   scale_y_continuous(limits=c(0,300))+
   stat_summary(fun.data = give.n, geom = "text", fun.y = median, colour = "red") +
   stat_summary(fun.data = median.n, geom = "text", fun.y = median)+
