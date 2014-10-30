@@ -1,5 +1,10 @@
 .body{
  background-color:#C8C8C8;
+
+}
+
+body {
+  position: relative;
 }
 
 
@@ -20,6 +25,9 @@ div.row div{
   font-size:1.2em;
 }
 
+.focus{
+  border-bottom: 10px solid rgba(44,157,142,0.5);
+}
 
 
 strong{

@@ -18,42 +18,81 @@
 
 </head>
 
-<body class="body">
+<body class="body" data-spy="scroll" data-target=".navbar-example">
 
 <div class="navbar  navbar-fixed-top main_bg shadow " role="navigation">
   <div class="container">
-    <div class="navbar-header">
+    <div class="navbar-header"  >
     <!--Project Name -->
       <a class="navbar-brand" href="#">VoteCash</a>
-      <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="http://ntuaha.github.io/about/">@ aha </a></li>
+      <ul class="nav nav-pills pull-left">
+          <li ><a href="http://ntuaha.github.io/about/">@ aha </a></li>
           <li><a href="https://github.com/ntuaha/VoteCash">VoteCash on Github</a></li>
-          <li><a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votemart.csv">Data</a></li>
           <li><a href="mailto:ntuaha@gmail.com">Contact Me</a></li>
         </ul>
     </div>
+
+
+
+
+
+
+    <div  class="navbar-example">
+
+<ul class="nav nav-pills  pull-right  " role="tablist">
+  <li><a href="#chap1">緣起</a></li>
+  <li><a href="#chap2">談討問題</a></li>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+      圖表<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu" role="menu">
+
+          <li><a href="#chap3">資料範圍</a></li>
+          <li><a href="#chap4">注意事項</a></li>
+          <li><a href="#chap5">一票值多少</a></li>
+          <li><a href="#chap6">政黨花費金額</a></li>
+          <li><a href="#chap7">勝敗選花費金額</a></li>
+          <li><a href="#chap8">連任花費金額</a></li>
+
+
+    </ul>
+  </li>
+          <li><a href="#chap9">結論</a></li>
+          <li><a href="#chap10">資料來源</a></li>
+          <li><a href="#chap11">特別感謝</a></li>
+</ul>
+
+
+
+          <ul class="nav nav-pills pull-right  ">
+
+
+
+        </ul>
+        </div>
   </div>
 </div>
 
 <div class="jumbotron shadow white_bg">
-  <div class="container ">
+  <div class="container" >
   <h1>台灣選舉指南</h1>
   <p> I could either watch it happens, or be part of it.</p>
   <footer><i>Elon Musk</i></footer>
   </div>
 </div>
 
-<div class="container ">
+<div class="container " >
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>緣起</h2>
+      <h2 id="chap1">緣起</h2>
       <p>每次選舉最重要的莫過於<strong>錢</strong>與<strong>人</strong>，能夠透過資料得<strong>金錢</strong>與<strong>選票</strong>的關聯性，就能透過參與選舉的前輩們的成果，了解現在的自己是否已經準備好了．由於台灣過去的選舉資料可以透過<a href="http://db.cec.gov.tw">中選會</a>的資料．<a href="http://sunshine.cy.gov.tw/GipOpenWeb/wSite/sp">監察院</a>裡面各個候選人所提報的選舉經費資訊，將這個民主政治中真正和權利與金流相關的議題卻又十分陌生的一環接露出來，希望能對於新生代的政治參與者與公民幫到任何一點忙．</p>
       </div>
     </div>
 
     <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>探討問題</h2>
+      <h2  id="chap2">探討問題</h2>
       <p>本次目標是提供有意義的資訊給要<strong>參與選舉活動的公民</strong>，因此針對以下幾個命題討論，最後總結:</p>
       <ol>
       <li>  平均來說一張票值多少，不同層級選舉是否有差？(例如總統與里長)</li>
@@ -67,7 +106,7 @@
 
       <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>資料範圍</h2>
+      <h2 id="chap3">資料範圍</h2>
       <div class="col-md-6 col-md-offset-3 ">
         <table class="table table-hover" id="data_source">
          <thead><td>項目</td><td>筆數</td></thead>
@@ -85,7 +124,7 @@
 
      <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>資料或分析成果使用相關注意事項</h2>
+      <h2 id="chap4">資料或分析成果使用相關注意事項</h2>
       <p><a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votemart.csv">使用資料</a>的<a href="https://docs.google.com/spreadsheets/d/1I6QGcDpmXxNY9_gZaWDkgHfRJyvGqGQEGARkr6YBnTM/edit">資料架構</a>請到以下連結參閱<a href="https://github.com/ntuaha/VoteCash/tree/gh-pages">https://github.com/ntuaha/VoteCash/tree/gh-pages</a></p>
 
       <p>此分析並沒有考慮到候選人自身因素或者當時時空背景，僅由原始資料做簡單整理呈現結果，根據經驗來說，雖然並非完全準確的反映現況，但通常在<strong>大數據威能</strong>下，真正答案大多存在中位數或平均數附近</p>
@@ -100,7 +139,7 @@
   <!-- Figure1 -->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-    <h2>一票值多少</h2>
+    <h2 id="chap5">一票值多少</h2>
         <p>橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．</p>
 
         <img src="./res/F1.png" alt="平均每個層次每張選票需要的花費" class="img-thumbnail img-responsive shadow row_padding"/>
@@ -118,7 +157,7 @@
 <!-- Figure2  3-->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>政黨每張票需要的花費的金額</h2>
+      <h2 id="chap6">政黨每張票需要的花費的金額</h2>
 
 
       <p>下圖各政黨民意代表的票價．橫軸單位<strong>元新台幣</strong>，縱軸為<strong>選舉類別</strong>．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
@@ -143,7 +182,7 @@
 <!-- Figure4-->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>勝選與敗選每張票需要的花費的金額</h2>
+      <h2 id="chap7">勝選與敗選每張票需要的花費的金額</h2>
 
 
       <p>依勝敗選的票價．橫軸為<strong>選舉類別</strong>，縱軸單位<strong>元新台幣</strong>，．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數</p>
@@ -165,7 +204,7 @@
 <!-- Figure5-->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>連任每張票需要的花費的金額</h2>
+      <h2 id="chap8">連任每張票需要的花費的金額</h2>
 
 
       <p>依勝敗選的票價．橫軸為<strong>選舉類別</strong>，縱軸單位<strong>元新台幣</strong>，．透過Boxplot，找出各級選舉平均每張票的Q1 Q3 與中位數．紅色數字代表資料筆數．水平左右為是否當選（左為當選，右為落選），而垂直分隔則是是否連任（上為連任，下為非現任）</p>
@@ -188,7 +227,7 @@
 <!-- Figure5-->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>結論</h2>
+      <h2 id="chap9">結論</h2>
 
        <p>以下統整之前幾張圖表告訴我們幾件重要的事情</p>
 
@@ -209,10 +248,10 @@
   <!-- Data source -->
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
-      <h2>資料來源</h2>
+      <h2 id="chap10">資料來源</h2>
 
     <dl class="dl-horizontal">
-      <dt><a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votemart.csv">分析使用資料表</a></dt>
+      <dt><a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/data/votemart.csv">Data</a></dt>
       <dd>透過這個資料，配合<a href="https://github.com/ntuaha/VoteCash/blob/gh-pages/src/Figures.R">Github</a>上的處理程式，就能開始進行分析！</dd>
       <dt><a href="http://db.cec.gov.tw">中選會</a></dt>
       <dd>可以獲得歷屆選舉投票狀況，本次研究是利用<a href="https://github.com/kiang/sunshine.cy.gov.tw">Kiang的sunshine</a>專案已經整理過後的資料</dd>
@@ -226,7 +265,7 @@
   <div class="row row_padding">
     <div class="col-md-12 shadow white_bg">
 
-    <h2>特別感謝</h2>
+    <h2 id="chap11">特別感謝</h2>
 
       <ol>
       <li> Johnson Hsieh </li>
