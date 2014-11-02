@@ -5,7 +5,7 @@ var votedata=null;
 
 
 function readData(){
-  votedata = d3.csv.parse("./data/votedata.csv");
+  //votedata = d3.csv.parse("./data/votedata.csv");
 }
 
 
@@ -49,16 +49,17 @@ $(function(){
     );
 
 //跑到其他頁面
- var size = $('.nav_list li').size();
-  for(var i =1;i<size;i++){
-    $($('.nav_list li')[i]).click(
-      function(){
-        $('html,body').animate({scrollTop: $($("a",this).attr("href")).offset().top -70 }, 'slow');
-        return false;
-      }
-      );
+    var size = $('.nav_list li').size();
+    for(var i =1;i<size;i++){
+        $($('.nav_list li')[i]).click(
+                function(){
+                    $('html,body').animate({scrollTop: $($("a",this).attr("href")).offset().top -70 }, 'slow');
+                    ga('send', 'event', 'watch', 'click', $("a",this).text());
+                    return false;
+                });
+    };
 
-  }
+
 
 
 });
